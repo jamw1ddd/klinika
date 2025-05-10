@@ -1,0 +1,2 @@
+# klinika
+Online Klinika hizmatlari
