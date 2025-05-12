@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<!-- Boshlanishi: Breadcrumbs -->
+	<div class="breadcrumbs overlay">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+					<div class="breadcrumbs-content">
+						<h1 class="page-title">Doktorlar Jadvali</h1>
+					</div>
+					<ul class="breadcrumb-nav">
+						<li><a href="{% url 'index' %}">Bosh sahifa</a></li>
+						<li>Ish vaqti</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Tugashi: Breadcrumbs -->
+
+	<!-- Boshlanishi: Jadval bo‘limi -->
+	<section class="doctor-calendar-area section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-title">
+						<h3>Ish Vaqti</h3>
+						<h2 class="wow fadeInUp" data-wow-delay=".4s">Doktorlarning kelish vaqti</h2>
+						<p class="wow fadeInUp" data-wow-delay=".6s">Quyidagi jadval orqali doktorlar qaysi kuni va qaysi vaqtda mavjudligini bilib olishingiz mumkin.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="doctor-calendar-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Vaqt</th>
+									<th>Dushanba</th>
+									<th>Seshanba</th>
+									<th>Chorshanba</th>
+									<th>Payshanba</th>
+									<th>Juma</th>
+									<th>Shanba</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="time">09:00</span></td>
+									<td>
+										<h3>Dr. Tanner</h3>
+										<span>Dermatolog</span>
+									</td>
+									<td>
+										<h3>Dr. Kwak</h3>
+										<span>Quloq, Burun mutaxassisi</span>
+									</td>
+									<td>
+										<h3>Dr. Slaughter</h3>
+										<span>Nevrolog</span>
+									</td>
+									<td></td>
+									<td>
+										<h3>Dr. Foley</h3>
+										<span>Onkolog</span>
+									</td>
+									<td>
+										<h3>Dr. Palmer</h3>
+										<span>Terapevt</span>
+									</td>
+								</tr>
+								<tr>
+									<td><span class="time">12:00</span></td>
+									<td></td>
+									<td>
+										<h3>Dr. Megahead</h3>
+										<span>Ortoped</span>
+									</td>
+									<td>
+										<h3>Dr. Neupane</h3>
+										<span>Og‘riqni boshqarish</span>
+									</td>
+									<td>
+										<h3>Dr. Breidin</h3>
+										<span>Radiolog</span>
+									</td>
+									<td></td>
+									<td>
+										<h3>Dr. Pipe</h3>
+										<span>Jarroh</span>
+									</td>
+								</tr>
+								<tr>
+									<td><span class="time">15:00</span></td>
+									<td>
+										<h3>Dr. Tanner</h3>
+										<span>Dermatolog</span>
+									</td>
+									<td>
+										<h3>Dr. Kwak</h3>
+										<span>Quloq, Burun mutaxassisi</span>
+									</td>
+									<td></td>
+									<td>
+										<h3>Dr. Slaughter</h3>
+										<span>Nevrolog</span>
+									</td>
+									<td>
+										<h3>Dr. Foley</h3>
+										<span>Onkolog</span>
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="time">18:00</span></td>
+									<td>
+										<h3>Dr. Slaughter</h3>
+										<span>Nevrolog</span>
+									</td>
+									<td>
+										<h3>Dr. Megahead</h3>
+										<span>Ortoped</span>
+									</td>
+									<td>
+										<h3>Dr. Neupane</h3>
+										<span>Og‘riqni boshqarish</span>
+									</td>
+									<td>
+										<h3>Dr. Breidin</h3>
+										<span>Radiolog</span>
+									</td>
+									<td>
+										<h3>Dr. Kwak</h3>
+										<span>Quloq, Burun mutaxassisi</span>
+									</td>
+									<td>
+										<h3>Dr. Pipe</h3>
+										<span>Jarroh</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Tugashi: Jadval bo‘limi -->
+{% endblock %}

@@ -1,0 +1,790 @@
+{% extends "base.html" %}
+{%load static%}
+{% block content %}
+
+    <!-- Qahramon (Hero) Bo‘limi Boshlanishi -->
+    <section class="hero-area">
+        <div class="shapes">
+            <img src="{% static 'images/05.svg' %}" class="shape1" alt="#">
+            <img src="{% static 'images/01.svg' %}" class="shape2" alt="#">
+        </div>
+        <div class="hero-slider">
+            <!-- Bitta Slayder Boshlanishi -->
+            <div class="single-slider">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="hero-text">
+                                <div class="section-heading">
+                                    <h2 class="wow fadeInLeft" data-wow-delay=".3s">Shifokor toping va <br>qabulga yoziling</h2>
+                                    <p class="wow fadeInLeft" data-wow-delay=".5s">
+                                        MediGrids faoliyatining ilk kunlaridan boshlab biz jamoamiz bilan yuqori sifatli tibbiy xizmatlarni taqdim etishga e'tibor qaratmoqdamiz.
+                                    </p>
+                                    <div class="button wow fadeInLeft" data-wow-delay=".7s">
+                                        <a href="{% url 'appointment' %}" class="btn">Qabulga yozilish</a>
+                                        <a href="{% url 'about' %}" class="btn">Biz haqimizda</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="hero-image wow fadeInRight" data-wow-delay=".5s">
+                                <img src="{% static 'images/02.png' %}" alt="Shifokor rasmi">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bitta Slayder Yakuni -->
+
+            <!-- Ikkinchi Slayder Boshlanishi -->
+            <div class="single-slider">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="hero-text wow fadeInLeft" data-wow-delay=".3s">
+                                <div class="section-heading">
+                                    <h2>Ko‘zlaringizga <br>eng yaxshi g‘amxo‘rlik</h2>
+                                    <p>
+                                        MediGrids tashkil topgan kundan boshlab biz yuqori sifatli xizmat ko‘rsatishni maqsad qilganmiz.
+                                    </p>
+                                    <div class="button">
+                                        <a href="{% url 'appointment' %}" class="btn">Qabulga yozilish</a>
+                                        <a href="{% url 'about' %}" class="btn">Biz haqimizda</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="hero-image">
+                                <img src="{% static 'images/slider-2.png' %}" alt="Ko‘z sog‘ligi rasmi">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ikkinchi Slayder Yakuni -->
+
+            <!-- Uchinchi Slayder Boshlanishi -->
+            <div class="single-slider">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="hero-text wow fadeInLeft" data-wow-delay=".3s">
+                                <div class="section-heading">
+                                    <h2>Yorqin kelajak uchun <br>zamonaviy yechimlar</h2>
+                                    <p>
+                                        Bizning maqsadimiz – sizni sog‘lom va baxtli ko‘rish. MediGrids bilan sog‘lig‘ingiz ishonchli qo‘llarda.
+                                    </p>
+                                    <div class="button">
+                                        <a href="{% url 'appointment' %}" class="btn">Qabulga yozilish</a>
+                                        <a href="{% url 'about' %}" class="btn">Biz haqimizda</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="hero-image">
+                                <img src="{% static 'images/slider-3.png' %}" alt="Tibbiy xizmat rasmi">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Uchinchi Slayder Yakuni -->
+        </div>
+    </section>
+    <!-- Qahramon (Hero) Bo‘limi Yakuni -->
+
+    <!-- "Biz haqimizda" Bo‘limi Boshlanishi -->
+    <section class="about-us section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Chap kontent (rasm va video) -->
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="content-left wow fadeInLeft" data-wow-delay=".3s">
+                        <img src="{% static 'images/about.png' %}" alt="Biz haqimizda">
+                        <a href="#" class="glightbox video">
+                            <i class="lni lni-play"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- O'ng kontent (matn) -->
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="content-right wow fadeInRight" data-wow-delay=".5s">
+                        <span class="sub-heading">Biz haqimizda</span>
+                        <h2>Har qanday tashxis uchun minglab maxsus xizmatlar</h2>
+                        <p>
+                            MediGrids klinikasi sizga zamonaviy tibbiy xizmatlarning keng tanlovini taklif etadi. Bizning malakali mutaxassislarimiz sog‘lig‘ingizni tiklash va saqlash uchun barcha imkoniyatlarni ishga soladilar.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <ul class="list">
+                                    <li><i class="lni lni-checkbox"></i>Ko‘z salomatligini tekshirish</li>
+                                    <li><i class="lni lni-checkbox"></i>Eng yaxshi LASIK muolajasi</li>
+                                    <li><i class="lni lni-checkbox"></i>Yengil kasalliklarni davolash</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <ul class="list">
+                                    <li><i class="lni lni-checkbox"></i>Maxsus ko‘z tekshiruvi</li>
+                                    <li><i class="lni lni-checkbox"></i>Kontakt linzalar xizmati</li>
+                                    <li><i class="lni lni-checkbox"></i>Retina (ko‘z pardasi) tekshiruvi</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <a href="{% url 'about' %}" class="btn">Batafsil ma'lumot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- "Biz haqimizda" Bo‘limi Yakuni -->
+
+
+    <!-- Mutaxassisliklar bo‘limi boshlanishi -->
+    <section class="departments section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3>Bo‘limlar</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">MediGrids klinikasidagi mavjud mutaxassisliklar</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Bizda siz uchun zamonaviy tibbiyotning turli yo‘nalishlari mavjud. Har bir bo‘limda tajribali mutaxassislar faoliyat yuritadi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="cardiology-tab" data-bs-toggle="tab" data-bs-target="#cardiology" type="button" role="tab" aria-controls="cardiology" aria-selected="true"><i class="lni lni-heart"></i>Kardiologiya</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="stomatology-tab" data-bs-toggle="tab" data-bs-target="#stomatology" type="button" role="tab" aria-controls="stomatology" aria-selected="false"><i class="lni lni-syringe"></i>Stomatologiya</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="radiology-tab" data-bs-toggle="tab" data-bs-target="#radiology" type="button" role="tab" aria-controls="radiology" aria-selected="false"><i class="lni lni-first-aid"></i>Radiologiya</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="neurology-tab" data-bs-toggle="tab" data-bs-target="#neurology" type="button" role="tab" aria-controls="neurology" aria-selected="false"><i class="lni lni-pulse"></i>Nevrologiya</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="ophthalmology-tab" data-bs-toggle="tab" data-bs-target="#ophthalmology" type="button" role="tab" aria-controls="ophthalmology" aria-selected="false"><i class="lni lni-sthethoscope"></i>Oftalmologi</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="myTabContent">
+                        <!-- Kardiologiya -->
+                        <div class="tab-pane fade show active" id="cardiology" role="tabpanel" aria-labelledby="cardiology-tab">
+                            <div class="department-content">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="image">
+                                            <img src="{%static 'images/image1.jpg'%}" alt="Kardiologiya">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="text">
+                                            <h3>Kardiologiya</h3>
+                                            <ul class="list">
+                                                <li><i class="lni lni-checkbox"></i> Yurak xastaligi profilaktikasi</li>
+                                                <li><i class="lni lni-checkbox"></i> Arterial bosim nazorati</li>
+                                                <li><i class="lni lni-checkbox"></i> EKG va yurak tekshiruvlari</li>
+                                            </ul>
+                                            <p>Yurak va qon tomir kasalliklarining erta aniqlanishi va davolanishi bo‘yicha tajribali mutaxassislarimiz sizning sog‘lig‘ingizni kafolatlaydi.</p>
+                                            <p>Sifatli maslahat, zamonaviy diagnostika va doimiy nazorat – bularning barchasi bizda mavjud.</p>
+                                            <div class="button">
+                                                <a href="#" class="btn">Mutaxassisni ko‘rish</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stomatologiya -->
+                        <div class="tab-pane fade" id="stomatology" role="tabpanel" aria-labelledby="stomatology-tab">
+                            <div class="department-content">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="image">
+                                            <img src="{%static 'images/image2.jpg'%}" alt="Stomatologiya">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="text">
+                                            <h3>Stomatologiya</h3>
+                                            <ul class="list">
+                                                <li><i class="lni lni-checkbox"></i> Tish davolash va plomba</li>
+                                                <li><i class="lni lni-checkbox"></i> Tish tozalash va gigiyenasi</li>
+                                                <li><i class="lni lni-checkbox"></i> Tish protezlash va implantatsiya</li>
+                                            </ul>
+                                            <p>Og‘riqsiz va sifatli stomatologik xizmatlar bilan sizga chiroyli tabassumni qaytaramiz.</p>
+                                            <p>Bolalar va kattalar uchun xizmatlar, zamonaviy uskunalar, tajribali shifokorlar xizmatda.</p>
+                                            <div class="button">
+                                                <a href="#" class="btn">Mutaxassisni ko‘rish</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Radiologiya -->
+                        <div class="tab-pane fade" id="radiology" role="tabpanel" aria-labelledby="radiology-tab">
+                            <div class="department-content">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="image">
+                                            <img src="{%static 'images/image3.jpg'%}" alt="Radiologiya">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="text">
+                                            <h3>Radiologiya</h3>
+                                            <ul class="list">
+                                                <li><i class="lni lni-checkbox"></i> Rengen tekshiruvlar</li>
+                                                <li><i class="lni lni-checkbox"></i> Ultrasonografiya (UZI)</li>
+                                                <li><i class="lni lni-checkbox"></i> Kompyuter tomografiyasi (KT)</li>
+                                            </ul>
+                                            <p>Organizmning ichki holatini aniqlik bilan tekshiruvchi zamonaviy uskunalar yordamida aniq tashxis qo‘yamiz.</p>
+                                            <p>Diagnostikada aniqlik va xavfsizlik biz uchun ustuvor yo‘nalishdir.</p>
+                                            <div class="button">
+                                                <a href="#" class="btn">Mutaxassisni ko‘rish</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nevrologiya -->
+                        <div class="tab-pane fade" id="neurology" role="tabpanel" aria-labelledby="neurology-tab">
+                            <div class="department-content">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="image">
+                                            <img src="{%static 'images/image4.jpg'%}" alt="Nevrologiya">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="text">
+                                            <h3>Nevrologiya</h3>
+                                            <ul class="list">
+                                                <li><i class="lni lni-checkbox"></i> Bosh og‘rig‘i va bosh aylanishi</li>
+                                                <li><i class="lni lni-checkbox"></i> Asab tizimi buzilishlari</li>
+                                                <li><i class="lni lni-checkbox"></i> Yelka, bo‘yin og‘rig‘i muolajalari</li>
+                                            </ul>
+                                            <p>Nevrologik muammolarni erta aniqlash, davolash va reabilitatsiya xizmatlari bizda mavjud.</p>
+                                            <p>Har bir bemorga individual yondashuvni kafolatlaymiz.</p>
+                                            <div class="button">
+                                                <a href="#" class="btn">Mutaxassisni ko‘rish</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Oftalmologiya -->
+                        <div class="tab-pane fade" id="ophthalmology" role="tabpanel" aria-labelledby="ophthalmology-tab">
+                            <div class="department-content">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="image">
+                                            <img src="{%static 'images/image5.jpg'%}" alt="Oftalmologiya">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="text">
+                                            <h3>Oftalmologiya</h3>
+                                            <ul class="list">
+                                                <li><i class="lni lni-checkbox"></i> Ko‘z tekshiruvlari</li>
+                                                <li><i class="lni lni-checkbox"></i> Ko‘zoynak va linzalar tanlovi</li>
+                                                <li><i class="lni lni-checkbox"></i> Katarakta, glaukoma tashxisi</li>
+                                            </ul>
+                                            <p>Ko‘z sog‘lig‘i – hayot sifati! Tajribali oftalmologlarimiz sizga ko‘rish qobiliyatini tiklashga yordam beradi.</p>
+                                            <p>Doimiy tekshiruvlar, tezkor maslahatlar va mos davolash uslublari bilan xizmatdamiz.</p>
+                                            <div class="button">
+                                                <a href="#" class="btn">Mutaxassisni ko‘rish</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End tabs -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mutaxassisliklar bo‘limi tugashi -->
+
+
+    <!-- Boshlanishi: Yutuqlarimiz -->
+    <section class="our-achievement section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
+                        <i class="lni lni-apartment"></i>
+                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="1250">1250</span></h3>
+                        <p>Kasalxona xonalari</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
+                        <i class="lni lni-sthethoscope"></i>
+                        <h3 class="counter"><span id="secondo2" class="countup" cup-end="350">350</span></h3>
+                        <p>Mutaxassis shifokorlar</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <i class="lni lni-emoji-smile"></i>
+                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="2500">2500</span></h3>
+                        <p>Mamnun bemorlar</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <i class="lni lni-certificate"></i>
+                        <h3 class="counter"><span id="secondo4" class="countup" cup-end="35">35</span></h3>
+                        <p>Yillik tajriba</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tugashi: Yutuqlarimiz -->
+
+    <!-- Boshlanishi: Xizmatlar bo‘limi -->
+    <section class="services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3>Xizmatlar</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">MediGrids tomonidan taqdim etilayotgan xizmatlar</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Klinikamizda zamonaviy texnologiyalar asosida, tajribali mutaxassislar tomonidan keng ko‘lamli tibbiy xizmatlar ko‘rsatiladi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="services-content">
+                        <div class="row">
+                            <!-- Xizmat 1 -->
+                            <div class="col-lg-4 col-md-6 col-12 custom-padding-right">
+                                <div class="single-list custom-border-right custom-border-bottom wow fadeInUp" data-wow-delay=".2s">
+                                    <img class="shape1" src="{%static 'images/shape1.svg'%}" alt="#">
+                                    <img class="shape2" src="{%static 'images/shape2.svg'%}" alt="#">
+                                    <i class="lni lni-ambulance"></i>
+                                    <h4><a href="#">Tez yordam</a></h4>
+                                    <p>Shoshilinch holatlarda tez tibbiy yordam ko‘rsatish uchun malakali xodimlarimiz kecha-kunduz xizmatda.</p>
+                                </div>
+                            </div>
+
+                            <!-- Xizmat 2 -->
+                            <div class="col-lg-4 col-md-6 col-12 custom-padding-left custom-padding-right ">
+                                <div class="single-list custom-border-right custom-border-bottom wow fadeInUp" data-wow-delay=".4s">
+                                    <img class="shape1" src="{%static 'images/shape1.svg'%}" alt="#">
+                                    <img class="shape2" src="{%static 'images/shape2.svg'%}" alt="#">
+                                    <i class="lni lni-sthethoscope"></i>
+                                    <h4><a href="#">Stomatolog mutaxassis</a></h4>
+                                    <p>Og‘riqsiz va ishonchli stomatologik xizmatlar, zamonaviy jihozlar va tajribali mutaxassislar kafolati bilan.</p>
+                                </div>
+                            </div>
+
+                            <!-- Xizmat 3 -->
+                            <div class="col-lg-4 col-md-6 col-12 custom-padding-left">
+                                <div class="single-list custom-border-bottom wow fadeInUp" data-wow-delay=".6s">
+                                    <img class="shape1" src="{%static 'images/shape1.svg'%}" alt="#">
+                                    <img class="shape2" src="{%static 'images/shape2.svg'%}" alt="#">
+                                    <i class="lni lni-microscope"></i>
+                                    <h4><a href="#">Zamonaviy laboratoriya</a></h4>
+                                    <p>Diagnostika uchun eng yangi laboratoriya uskunalari yordamida aniqlik va ishonchlilik ta'minlanadi.</p>
+                                </div>
+                            </div>
+
+                            <!-- Xizmat 4 -->
+                            <div class="col-lg-4 col-md-6 col-12 custom-padding-right">
+                                <div class="single-list custom-border-right wow fadeInUp" data-wow-delay=".2s">
+                                    <img class="shape1" src="{%static 'images/shape1.svg'%}" alt="#">
+                                    <img class="shape2" src="{%static 'images/shape2.svg'%}" alt="#">
+                                    <i class="lni lni-users"></i>
+                                    <h4><a href="#">Bolalar markazi</a></h4>
+                                    <p>Bola salomatligi uchun maxsus pediatrlar va qulay muhitda to‘liq tibbiy ko‘rik va davolash xizmatlari.</p>
+                                </div>
+                            </div>
+
+                            <!-- Xizmat 5 -->
+                            <div class="col-lg-4 col-md-6 col-12 custom-padding-left custom-padding-right">
+                                <div class="single-list custom-border-right wow fadeInUp" data-wow-delay=".4s">
+                                    <img class="shape1" src="{%static 'images/shape1.svg'%}" alt="#">
+                                    <img class="shape2" src="{%static 'images/shape2.svg'%}" alt="#">
+                                    <i class="lni lni-heart"></i>
+                                    <h4><a href="#">Yurak jarrohligi</a></h4>
+                                    <p>Yurak bilan bog‘liq jarrohlik amaliyotlari yuqori malakali mutaxassislar tomonidan xavfsiz amalga oshiriladi.</p>
+                                </div>
+                            </div>
+
+                            <!-- Xizmat 6 -->
+                            <div class="col-lg-4 col-md-6 col-12 custom-padding-left">
+                                <div class="single-list wow fadeInUp" data-wow-delay=".6s">
+                                    <img class="shape1" src="{%static 'images/shape1.svg'%}" alt="#">
+                                    <img class="shape2" src="{%static 'images/shape2.svg'%}" alt="#">
+                                    <i class="lni lni-hand"></i>
+                                    <h4><a href="#">Maslahat</a></h4>
+                                    <p>Ortiqcha stress, noto‘g‘ri ovqatlanish va sog‘liq muammolariga qarshi maslahatlar orqali yordam beramiz.</p>
+                                </div>
+                            </div>
+                        </div> <!-- /row -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tugashi: Xizmatlar bo‘limi -->
+
+    {% comment %} <!-- Start Portfolio Area-->
+    <section class="portfolio-section section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3>Projects</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Here is Some of our <br>Latest Cases</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="portfolio-btn-wrapper wow fadeInUp" data-wow-delay=".4s">
+                        <button class="portfolio-btn active" data-filter="*">Show All</button>
+                        <button class="portfolio-btn" data-filter=".cardiology">Cardiology</button>
+                        <button class="portfolio-btn" data-filter=".diabetes">Diabetes</button>
+                        <button class="portfolio-btn" data-filter=".pediatric">Pediatric</button>
+                        <button class="portfolio-btn" data-filter=".neurosurgery">Neurosurgery</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row grid">
+                <div class="col-lg-4 col-md-6 grid-item diabetes">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-img">
+                            <img src="images/pf1.jpg" alt="#">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="pf-content">
+                                <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                                <span class="category">Cardiac Surgery</span>
+                                <h4><a href="portfolio-details.html">Qualified Physicians</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item diabetes">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-img">
+                            <img src="images/pf2.jpg" alt="#">
+                        </div>
+                        <div class="pf-content">
+                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <span class="category">Cloud Services</span>
+                            <h4><a href="portfolio-details.html">Personalized Medication</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item pediatric">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-img">
+                            <img src="images/pf3.jpg" alt="#">
+                        </div>
+                        <div class="pf-content">
+                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <span class="category">Dietetics</span>
+                            <h4><a href="portfolio-details.html">Excellence And Safety</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item cardiology">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-img">
+                            <img src="images/pf4.jpg" alt="#">
+                        </div>
+                        <div class="pf-content">
+                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <span class="category">Eye Surgery</span>
+                            <h4><a href="portfolio-details.html">Dry Eye Surgery</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item pediatric">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-img">
+                            <img src="images/pf5.jpg" alt="#">
+                        </div>
+                        <div class="pf-content">
+                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <span class="category">Surgical</span>
+                            <h4><a href="portfolio-details.html">Surgical Procedure</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item neurosurgery">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-img">
+                            <img src="images/pf6.jpg" alt="#">
+                        </div>
+                        <div class="pf-content">
+                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <span class="category">Eye Surgery</span>
+                            <h4><a href="portfolio-details.html">Dry Eye Surgery</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Portfolio Area--> {% endcomment %}
+
+    <!-- Boshlanishi: Fikr-mulohazalar (Testimonials) bo‘limi -->
+    <section class="testimonials section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title align-center gray-bg">
+                        <h3>Fikrlar</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Odamlar nima deydi?</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Quyida bizning xizmatlarimizdan foydalangan mijozlar fikrlari bilan tanishing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row testimonial-slider">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Yagona Fikr -->
+                    <div class="single-testimonial">
+                        <div class="text">
+                            <div class="quote-icon">
+                                <i class="lni lni-quotation"></i>
+                            </div>
+                            <p>"Yangi odamlarga uchrashish va tezda aloqa o‘rnatish ancha oson bo‘ldi."</p>
+                        </div>
+                        <div class="author">
+                            <img src="{% static 'images/testi1.jpg' %}" alt="Fikr egasi rasmi">
+                            <h4 class="name">
+                                Jeyn Anderson
+                                <span class="deg">Onkologiya bemori</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Yagona Fikr -->
+                    <div class="single-testimonial">
+                        <div class="text">
+                            <div class="quote-icon">
+                                <i class="lni lni-quotation"></i>
+                            </div>
+                            <p>"Xizmatlar juda qulay va xodimlar juda samimiy."</p>
+                        </div>
+                        <div class="author">
+                            <img src="{% static 'images/testi2.jpg' %}" alt="Fikr egasi rasmi">
+                            <h4 class="name">
+                                Paul Flavius
+                                <span class="deg">Teri kasalliklari bemori</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Yagona Fikr -->
+                    <div class="single-testimonial">
+                        <div class="text">
+                            <div class="quote-icon">
+                                <i class="lni lni-quotation"></i>
+                            </div>
+                            <p>"Jarrohlik muolajasi professional tarzda bajarildi. Juda minnatdorman."</p>
+                        </div>
+                        <div class="author">
+                            <img src="{% static 'images/testi3.jpg' %}" alt="Fikr egasi rasmi">
+                            <h4 class="name">
+                                Garri Rassel
+                                <span class="deg">Jarrohlik bemori</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Yagona Fikr -->
+                    <div class="single-testimonial">
+                        <div class="text">
+                            <div class="quote-icon">
+                                <i class="lni lni-quotation"></i>
+                            </div>
+                            <p>"Farzandim uchun kerakli yordamni tez va sifatli oldik. Rahmat!"</p>
+                        </div>
+                        <div class="author">
+                            <img src="{% static 'images/testi4.jpg' %}" alt="Fikr egasi rasmi">
+                            <h4 class="name">
+                                Alisa Uilyams
+                                <span class="deg">Ona</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tugashi: Fikr-mulohazalar bo‘limi -->
+
+
+    <!-- Start Doctors Area -->
+    <section class="doctors section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3>Shifokorlar</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Bizning Ajoyib Jamoamiz Sizga Yordam Berishga Tayyor!</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Bizning shifokorlar sog'lig'ingiz uchun doimo xizmatda.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for doctor in doctors %}
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Doctor -->
+                    <div class="single-doctor wow fadeInUp" data-wow-delay=".{{ forloop.counter }}s">
+                        <div class="image">
+                            <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}">
+                            <ul class="social">
+                                {% if doctor.facebook %}<li><a href="{{ doctor.facebook }}"><i class="lni lni-facebook-filled"></i></a></li>{% endif %}
+                                {% if doctor.twitter %}<li><a href="{{ doctor.twitter }}"><i class="lni lni-twitter-original"></i></a></li>{% endif %}
+                                {% if doctor.instagram %}<li><a href="{{ doctor.instagram }}"><i class="lni lni-instagram"></i></a></li>{% endif %}
+                                {% if doctor.youtube %}<li><a href="{{ doctor.youtube }}"><i class="lni lni-youtube"></i></a></li>{% endif %}
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h5>{{ doctor.profession }}</h5>
+                            <h3><a href="{% url 'doctor_detail' doctor.id %}">{{ doctor.full_name }}</a></h3>
+                            <a href="{% url 'doctor_detail' doctor.id %}" class="btn btn-success mt-2">Batafsil</a>
+                        </div>
+                    </div>
+                    <!-- End Single Doctor -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Doctors Area -->
+
+
+    <!-- Boshlanishi: Qanday ishlaymiz bo‘limi -->
+    <section class="how-works">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12 p-0">
+                    <!-- Boshlanishi: Yagona ish -->
+                    <div class="single-work first">
+                        <div class="main-icon">
+                            <i class="lni lni-agenda"></i>
+                        </div>
+                        <h3>Eng yaxshi monitoring tizimi</h3>
+                        <p>Bizning klinikamiz zamonaviy texnologiyalar asosida bemorlar holatini uzluksiz nazorat qilish tizimi bilan jihozlangan.</p>
+                    </div>
+                    <!-- Tugashi: Yagona ish -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-12 p-0">
+                    <!-- Boshlanishi: Yagona ish -->
+                    <div class="single-work middle">
+                        <div class="main-icon">
+                            <i class="lni lni-hospital"></i>
+                        </div>
+                        <h3>Ilg‘or operatsion xonalar</h3>
+                        <p>Operatsion xonalarimiz steril muhit va ilg‘or tibbiy asbob-uskunalar bilan ta’minlangan bo‘lib, har qanday murakkab jarrohlik amaliyotini xavfsiz bajarishga imkon yaratadi.</p>
+                    </div>
+                    <!-- Tugashi: Yagona ish -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-12 p-0">
+                    <!-- Boshlanishi: Yagona ish -->
+                    <div class="single-work last">
+                        <div class="main-icon">
+                            <i class="lni lni-sthethoscope"></i>
+                        </div>
+                        <h3>Faqat eng yaxshi shifokorlar</h3>
+                        <p>Bizda faqat tajribali, o‘z sohasining yetuk mutaxassislari faoliyat yuritadi. Ular sizning sog‘lig‘ingizni birinchi o‘ringa qo‘yadi.</p>
+                    </div>
+                    <!-- Tugashi: Yagona ish -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tugashi: Qanday ishlaymiz bo‘limi -->
+
+
+    <!-- Yangiliklar bo‘limi boshlanishi -->
+    <div class="latest-news-area section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3>Bloglar</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">So‘nggi yangiliklar</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Bizning so‘nggi blog yozuvlarimizni o‘qing. Siz uchun foydali va qiziqarli ma’lumotlar tayyorladik.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for post in blog_posts %}
+                <div class="col-lg-6 col-md-12 col-12">
+                    <!-- Bitta yangilik -->
+                    <div class="single-news wow fadeInUp" data-wow-delay=".2s">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col-12 pr-0">
+                                <div class="image">
+                                    <a href="{% url 'blog_detail' post.id %}">
+                                        <img src="{{ post.rasm.url }}" alt="{{ post.sarlavha }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-12 pl-0">
+                                <div class="content">
+                                    <h2 class="title">
+                                        <a href="{% url 'blog_detail' post.id %}">{{ post.sarlavha }}</a>
+                                    </h2>
+                                    <p>{{ post.matn|truncatewords:20 }}</p>
+                                    <ul class="meta-info">
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="lni lni-user"></i> {{ post.muallif }}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="lni lni-timer"></i> {{ post.sana|date:"d M Y" }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bitta yangilik yakuni -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Yangiliklar bo‘limi yakuni -->
+
+{% endblock content%}

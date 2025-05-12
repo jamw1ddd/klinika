@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{%load static%}
+{% block content %}
+    <!-- Yo‘nalish navigatsiyasi boshlanishi -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Tibbiyot haqida so'ngi yangiliklar</h1>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'index' %}">Bosh sahifa</a></li>
+                        <li>Yangiliklar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Yo‘nalish navigatsiyasi yakuni -->
+
+
+    <!-- Start Blog Singel Area -->
+    <section class="section latest-news-area blog-list">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-12">
+                    <!-- Start Single News -->
+                    {% for post in posts %}
+                    <div class="single-news">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col-12 pr-0">
+                                <div class="image">
+                                    {% if post.rasm %}
+                                    <a href="{% url 'blog_detail' post.id %}">
+                                        <img src="{{ post.rasm.url }}" alt="{{ post.sarlavha }}">
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'blog_detail' post.id %}">
+                                        <img src="{%static 'images/default-blog-image.jpg'%}" alt="{{ post.sarlavha }}">
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-12 pl-0">
+                                <div class="content">
+                                    <h2 class="title">
+                                        <a href="{% url 'blog_detail' post.id %}">{{ post.sarlavha }}</a>
+                                    </h2>
+                                    <p>{{ post.matn|truncatewords:30 }}</p>
+                                    <ul class="meta-info">
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <img src="{%static 'images/comment1.jpg'%}" alt="#">
+                                                {{ post.muallif }}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">{{ post.sana|date:"d M Y" }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No posts available.</p>
+                    {% endfor %}
+                    <!-- End Single News -->
+                    <!-- Sahifalash -->
+                    <div class="pagination left blog-grid-page">
+                        <ul class="pagination-list">
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li class="disabled"><span>Oldingi</span></li>
+                            {% endif %}
+
+                            {% for num in page_obj.paginator.page_range %}
+                                {% if page_obj.number == num %}
+                                    <li class="active"><span>{{ num }}</span></li>
+                                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                    <li><a href="?page={{ num }}">{{ num }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                            {% else %}
+                                <li class="disabled"><span>Keyingi</span></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <!-- /Sahifalash -->
+                </div>
+                <aside class="col-lg-4 col-md-12 col-12">
+                    <div class="sidebar blog-grid-page">
+                        <!-- Start Single Widget -->
+                        <div class="widget search-widget">
+                            <h5 class="widget-title">Saytdan qidirish</h5>
+                            <form method="get" action="{% url 'blog_search' %}">
+                                <input type="text" name="q" placeholder="Qidirish...">
+                                <button type="submit"><i class="lni lni-search-alt"></i></button>
+                            </form>
+                        </div>
+                        <!-- End Single Widget -->
+                        <!-- Start Single Widget -->
+                        <div class="widget popular-feeds">
+                            <h5 class="widget-title">Ommabop postlar</h5>
+                            <div class="popular-feed-loop">
+                                {% for post in popular_posts %}
+                                <div class="single-popular-feed">
+                                    <div class="feed-desc">
+                                        <a class="feed-img" href="{% url 'blog_detail' post.id %}">
+                                            {% if post.rasm %}
+                                                <img src="{{ post.rasm.url }}" alt="{{ post.sarlavha }}">
+                                            {% else %}
+                                                <img src="{% static 'images/no-image.jpg' %}" alt="No image">
+                                            {% endif %}
+                                        </a>
+                                        <h6 class="post-title">
+                                            <a href="{% url 'blog_detail' post.id %}">{{ post.sarlavha }}</a>
+                                        </h6>
+                                        <span class="time">
+                                            <i class="lni lni-calendar"></i> {{ post.sana|date:"d M Y" }}
+                                        </span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                        <!-- Start Single Widget -->
+                        <div class="widget help-call">
+                            <h5 class="widget-title">Yordam kerakmi?</h5>
+                            <div class="inner">
+                                <h3>
+                                    Tezkor yordam!
+                                    <span>+(99890) 916-22-21</span>
+                                </h3>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Singel Area -->
+
+{%endblock content%}

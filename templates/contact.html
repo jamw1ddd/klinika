@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{%load static%}
+{% block content %}
+   <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Biz bilan bog‘lanish</h1>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'index' %}">Bosh sahifa</a></li>
+                        <li>Kontakt</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontakt Bo‘limi -->
+    <section id="contact-us" class="contact-us section">
+        <div class="container">
+            <div class="contact-head wow fadeInUp" data-wow-delay=".4s">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h3>Kontakt</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Biz har doim bemorlarimizga yordam berishga tayyormiz</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">Savollaringiz bo‘lsa, biz bilan bog‘laning. Ilhomlantiruvchi tibbiy xizmat sizni kutmoqda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Forma -->
+                    <div class="col-lg-8 col-12">
+                        <div class="form-main">
+                            <div class="form-title">
+                                <h2>Iltimos, quyidagi formani to‘ldiring</h2>
+                            </div>
+                            <form method="post" class="form">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            {{ form.name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            {{ form.subject }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            {{ form.email }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            {{ form.phone }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group message">
+                                            {{ form.message }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group button">
+                                            <button type="submit" class="btn">Xabar yuborish</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Aloqa Ma'lumotlari -->
+                    <div class="col-lg-4 col-12">
+                        <div class="single-head">
+                            <h2 class="main-title">Aloqa ma’lumotlari</h2>
+                            <div class="single-info">
+                                <div class="info-icon">
+                                    <i class="lni lni-map-marker"></i>
+                                </div>
+                                <h3>Manzilimiz</h3>
+                                <ul>
+                                    <li>Toshkent shahri, Chilonzor tumani, 1-tor ko‘cha 45-uy</li>
+                                </ul>
+                            </div>
+                            <div class="single-info">
+                                <div class="info-icon">
+                                    <i class="lni lni-timer"></i>
+                                </div>
+                                <h3>Ish vaqti</h3>
+                                <ul>
+                                    <li>Dushanba - Juma: 09:00 - 18:00</li>
+                                    <li>Shanba: 09:00 - 14:00</li>
+                                </ul>
+                            </div>
+                            <div class="single-info">
+                                <div class="info-icon">
+                                    <i class="lni lni-envelope"></i>
+                                </div>
+                                <h3>Email orqali aloqa</h3>
+                                <ul>
+                                    <li><a href="mailto:info@example.com">info@klinikamiz.uz</a></li>
+                                </ul>
+                            </div>
+                            <div class="single-info contact-social">
+                                <h3>Ijtimoiy tarmoqlar</h3>
+                                <div class="info-icon">
+                                    <i class="lni lni-mobile"></i>
+                                </div>
+                                <ul>
+                                    <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-telegram-original"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Google-map Area -->
+    <div class="map-section">
+        <div class="map-container">
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5998.133703669115!2d69.34833406170036!3d41.26388029854803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae5fbd8cc257cb%3A0x441d41a7a85645e1!2z0JjRhdC70L7RgSDQsdCw0YXRgiDRiNC40YTQviDQutC70LjQvdC40LrQsA!5e0!3m2!1sru!2s!4v1746998556704!5m2!1sru!2s" width="1300" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 500px;
+                            width: 100%;
+                        }
+
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            height: 500px;
+                            width: 100%;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Google-map Area -->
+
+{%endblock content%}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs overlay">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Shifokorlar</h1>
+                </div>
+                <ul class="breadcrumb-nav">
+                    <li><a href="{% url 'index' %}">Bosh sahifa</a></li>
+                    <li>Shifokorlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumbs -->
+
+<!-- Doctors Section -->
+<section class="doctors section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3>Shifokorlar</h3>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Bizning ajoyib jamoamiz sizga yordam berishga tayyor!</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">Bizning klinikamizda faoliyat yuritayotgan malakali shifokorlar bilan tanishing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for doctor in doctors %}
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-doctor wow fadeInUp" data-wow-delay=".{{ forloop.counter }}s">
+                    <div class="image">
+                        <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}">
+                        <ul class="social">
+                            {% if doctor.facebook %}<li><a href="{{ doctor.facebook }}"><i class="lni lni-facebook-filled"></i></a></li>{% endif %}
+                            {% if doctor.twitter %}<li><a href="{{ doctor.twitter }}"><i class="lni lni-twitter-original"></i></a></li>{% endif %}
+                            {% if doctor.instagram %}<li><a href="{{ doctor.instagram }}"><i class="lni lni-instagram"></i></a></li>{% endif %}
+                            {% if doctor.youtube %}<li><a href="{{ doctor.youtube }}"><i class="lni lni-youtube"></i></a></li>{% endif %}
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <h5>{{ doctor.profession }}</h5>
+                        <h3><a href="{% url 'doctor_detail' doctor.id %}">{{ doctor.full_name }}</a></h3>
+                        <a href="{% url 'doctor_detail' doctor.id %}" class="batafsil-btn">Batafsil</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>Hozircha hech qanday shifokor mavjud emas.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- /Doctors Section -->
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="breadcrumbs overlay">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Uchrashuvga yozilish</h1>
+                </div>
+                <ul class="breadcrumb-nav">
+                    <li><a href="{% url 'index' %}">Bosh sahifa</a></li>
+                    <li>Uchrashuv</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="appointment page section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="appointment-form">
+                    <div class="appointment-title">
+                        <h2>Uchrashuv uchun ariza</h2>
+                        <p>Har qanday savol yoki tibbiy murojaatlar bo'yicha biz bilan bog'lanishingiz mumkin.</p>
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="id_name"><i class="lni lni-user"></i></label>
+                                    {{ form.name }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="id_email"><i class="lni lni-envelope"></i></label>
+                                    {{ form.email }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="id_phone"><i class="lni lni-phone-set"></i></label>
+                                    {{ form.phone }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="id_doctor"><i class="lni lni-notepad"></i></label>
+                                    {{ form.doctor }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="id_date"><i class="lni lni-calendar"></i></label>
+                                    {{ form.date }}
+                                </div>
+                            </div>
+                            <div class="col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="id_message"><i class="lni lni-comments"></i></label>
+                                    {{ form.message }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-btn button">
+                                    <button type="submit" class="btn">Yuborish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

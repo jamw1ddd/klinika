@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs overlay">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">{{ doctor.full_name }}</h1>
+                </div>
+                <ul class="breadcrumb-nav">
+                    <li><a href="{% url 'index' %}">Bosh sahifa</a></li>
+                    <li>Shifokor tafsilotlari</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Doctor Details Area -->
+<section class="doctor-details section">
+    <div class="container">
+        <div class="inner">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <!-- Doctor Image & Sidebar -->
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="image">
+                                <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}">
+                            </div>
+                            <div class="doctor-left-bar">
+                                <div class="single-bar">
+                                    <h4>Mutaxassislik</h4>
+                                    <p>{{ doctor.specialty }}</p>
+                                </div>
+                                <div class="single-bar">
+                                    <h4>Kasalliklar</h4>
+                                    <p>{{ doctor.conditions }}</p>
+                                </div>
+                                <div class="single-bar">
+                                    <h4>A'zoliklar</h4>
+                                    <ul class="list">
+                                        {% for membership in memberships %}
+                                            <li><a href="javascript:void(0)">{{ membership }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="single-bar">
+                                    <h4>Qabul vaqti</h4>
+                                    <ul class="opening-hour">
+                                        <li>
+                                            <span class="day"><i class="lni lni-timer"></i> Dushanba - Seshanba</span>
+                                            <span class="time">{{ doctor.schedule_mon_tue }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="day"><i class="lni lni-timer"></i> Chorshanba - Payshanba</span>
+                                            <span class="time">{{ doctor.schedule_wed_thu }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="day"><i class="lni lni-timer"></i> Juma</span>
+                                            <span class="time">{{ doctor.schedule_fri }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="day"><i class="lni lni-timer"></i> Shanba</span>
+                                            <span class="time">{{ doctor.schedule_sat }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Main Content -->
+                        <div class="col-lg-8 col-md-8 col-12">
+                            <div class="content">
+                                <h3 class="name">{{ doctor.full_name }}
+                                    <span>Jamiyatimiz salomatligi yo‘lida xizmatda</span>
+                                </h3>
+                                <ul class="list-info">
+                                    <li><span>Kasbi:</span> {{ doctor.profession }}</li>
+                                    <li><span>Tajriba:</span> {{ doctor.experience_years }} yil</li>
+                                    <li><span>Telefon:</span> {{ doctor.phone }}</li>
+                                    <li><span>Email:</span> {{ doctor.email }}</li>
+                                    <li><span>Manzil:</span> {{ doctor.address }}</li>
+                                    <li>
+                                        <ul class="social">
+                                            <li><span>Ijtimoiy tarmoqlarda:</span></li>
+                                            {% if doctor.facebook %}
+                                                <li><a href="{{ doctor.facebook }}"><i class="lni lni-facebook-filled"></i></a></li>
+                                            {% endif %}
+                                            {% if doctor.twitter %}
+                                                <li><a href="{{ doctor.twitter }}"><i class="lni lni-twitter-original"></i></a></li>
+                                            {% endif %}
+                                            {% if doctor.instagram %}
+                                                <li><a href="{{ doctor.instagram }}"><i class="lni lni-instagram"></i></a></li>
+                                            {% endif %}
+                                            {% if doctor.pinterest %}
+                                                <li><a href="{{ doctor.pinterest }}"><i class="lni lni-pinterest"></i></a></li>
+                                            {% endif %}
+                                            {% if doctor.youtube %}
+                                                <li><a href="{{ doctor.youtube }}"><i class="lni lni-youtube"></i></a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <h4>Biografiya</h4>
+                                <p>{{ doctor.biography }}</p>
+
+                                <h4>Ta’lim</h4>
+                                <ul class="normal-list-info">
+                                    {% for edu in education_list %}
+                                        <li>{{ edu }}</li>
+                                    {% endfor %}
+                                </ul>
+
+                                <h4>Ilmiy qiziqishlari</h4>
+                                <p>{{ doctor.research_interests }}</p>
+
+                                <h4>Mukofotlar va Faxriy unvonlar</h4>
+                                <ul class="normal-list-info">
+                                    {% for award in awards_list %}
+                                        <li>{{ award }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Main Content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Doctor Details Area -->
+
+{% endblock %}
