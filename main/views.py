@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import Doctor, BlogPost
-from .forms import AppointmentForm, ContactForm
+from .models import Doctor, BlogPost, Izoh
+from .forms import AppointmentForm, ContactForm,IzohForm
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
@@ -29,12 +29,12 @@ def doctor_detail(request, pk):
     }
     return render(request, 'doctor_detail.html', context)
 
-
 def services(request):
     return render(request,'services.html')
 
 def service_detail(request):
     return render(request,'service_detail.html')
+
 
 def blog(request):
     posts = BlogPost.objects.all().order_by('-sana')  # Blog postlarini sanaga ko‘ra tartiblaymiz
@@ -49,8 +49,25 @@ def blog(request):
     })
 
 def blog_detail(request, post_id):
-    post = get_object_or_404(BlogPost, pk=post_id)  # ID orqali postni olish
-    return render(request, 'blog_detail.html', {'post': post})
+    post = get_object_or_404(BlogPost, pk=post_id)
+    izohlar = post.izohlar.all().order_by('-yaratilgan_vaqti')  # Postga tegishli barcha izohlar
+
+    if request.method == 'POST':
+        forma = IzohForm(request.POST)
+        if forma.is_valid():
+            izoh = forma.save(commit=False)
+            izoh.post = post  # post bilan bog‘laymiz
+            izoh.save()
+            return redirect('blog_detail', post_id=post.id)  # Qayta yuklab, ikki marta yuborilishni oldini olamiz
+    else:
+        forma = IzohForm()
+
+    kontekst = {
+        'post': post,
+        'izohlar': izohlar,
+        'forma': forma
+    }
+    return render(request, 'blog_detail.html', kontekst)
 
 def blog_search(request):
     query = request.GET.get('q', '')

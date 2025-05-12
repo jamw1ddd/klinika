@@ -1,5 +1,5 @@
 from django import forms
-from .models import Appointment, ContactMessage, Doctor
+from .models import Appointment, ContactMessage, Doctor,Izoh
 
 
 class AppointmentForm(forms.ModelForm):
@@ -31,4 +31,17 @@ class ContactForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'placeholder': 'Email manzilingiz', 'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'placeholder': 'Telefon raqamingiz', 'class': 'form-control'}),
             'message': forms.Textarea(attrs={'placeholder': 'Xabaringizni bu yerga yozing...', 'class': 'form-control', 'rows': 5}),
+        }
+
+
+
+class IzohForm(forms.ModelForm):
+    class Meta:
+        model = Izoh
+        fields = ['ism', 'email', 'telefon', 'matn']
+        widgets = {
+            'ism': forms.TextInput(attrs={'placeholder': 'Ismingiz', 'class': 'form-control form-control-custom'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Email', 'class': 'form-control form-control-custom'}),
+            'telefon': forms.TextInput(attrs={'placeholder': 'Telefon raqamingiz', 'class': 'form-control form-control-custom'}),
+            'matn': forms.Textarea(attrs={'placeholder': 'Izohingiz...', 'class': 'form-control form-control-custom'}),
         }

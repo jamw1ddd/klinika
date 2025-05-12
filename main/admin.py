@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import Appointment, Doctor, Profession, ContactMessage, BlogPost
+from .models import Appointment, Doctor, Profession, ContactMessage, BlogPost, Izoh
 
 
 admin.site.register(Profession)
 admin.site.register(Doctor)
 admin.site.register(BlogPost)
+admin.site.register(Izoh)
 
 
 @admin.register(Appointment)
