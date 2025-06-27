@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index,doctor_detail,services,service_detail,doctors,blog,blog_detail,contact,appointment,table,success,about,blog_search
+from .views import doctor_admin, index,doctor_detail, login,services,service_detail,doctors,blog,blog_detail,contact,appointment,table,success,about,blog_search
 
 
 urlpatterns = [
@@ -16,4 +16,6 @@ urlpatterns = [
     path('table/',table, name='table'),
     path('success/',success, name='success' ),
     path('about/',about, name='about' ),
+    path('doctor_admin/',doctor_admin, name='doctor_admin'),
+    path('login/',login, name='login'),
 ]

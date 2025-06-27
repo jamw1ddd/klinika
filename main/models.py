@@ -39,8 +39,7 @@ class Doctor(models.Model):
     youtube = models.URLField(blank=True, null=True)
 
     def __str__(self):
-        return self.full_name
-
+        return f"{self.profession.name} - {self.full_name}"
 
 
 class Appointment(models.Model):

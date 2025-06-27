@@ -110,3 +110,8 @@ def about(request):
     doctors = Doctor.objects.all()[:4]
     return render(request, 'about.html', {'doctors': doctors})
 
+def doctor_admin(request):
+    return render(request, 'doctoradmin/admindoctor.html')
+
+def login(request):
+    return render(request, 'doctoradmin/login.html')
